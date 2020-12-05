@@ -29,6 +29,13 @@ public class Producto {
 
     private Boolean estado;
 
+    //la relacion es muchos a uno porque varios productos puede estar en una sola categoria
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", insertable = false,updatable = false)
+    //Para establecer la relacion entre productos y categoria se debe de crear un objeto categoria
+    private Categoria categoria;
+
+
     public Integer getIdProducto() {
         return idProducto;
     }
