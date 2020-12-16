@@ -1,0 +1,63 @@
+package com.desarrollo.josue.platzimarket.persistence.entity;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "compras_productos")
+public class ComprasProducto {
+
+    //Se utiliza la anotacion de abajo cuando la clave primaria es compuesta, cuando es primaria
+    //Usamos la anotacion @Id ademas hay q resaltar que se creo una clase para contener la clave compuesta
+    //ComprasProductoPK.java
+    @EmbeddedId
+    private ComprasProductoPK id;
+    private Integer cantidad;
+    private Double total;
+    private Boolean estado;
+
+    @ManyToOne
+    @JoinColumn(name = "id_compra",insertable = false,updatable = false)
+    private Compra compra;
+
+    @ManyToOne
+    @JoinColumn(name = "id_producto",insertable = false,updatable = false)
+    private Producto producto;
+
+
+    //Formar un idea de la diferencia entre los tipos de variables
+    //int Integer       tipos primitivos
+    //double Double
+    //string String
+
+    public ComprasProductoPK getId() {
+        return id;
+    }
+
+    public void setId(ComprasProductoPK id) {
+        this.id = id;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+}
