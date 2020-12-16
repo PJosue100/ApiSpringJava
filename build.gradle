@@ -18,12 +18,11 @@ dependencies {
 
 	runtimeOnly'org.postgresql:postgresql'
 
-<<<<<<< HEAD
+
 	implementation 'org.mapstruct:mapstruct:1.4.1.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.1.Final'
 
-=======
->>>>>>> ce010ff858cd2c38f8e28b1af4dfae667930191a
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

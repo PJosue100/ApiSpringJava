@@ -42,7 +42,6 @@ public class Categoria {
     public void setEstado(Boolean estado) {
         this.estado = estado;
     }
-<<<<<<< HEAD
 
     public List<Producto> getProductos() {
         return productos;
@@ -51,6 +50,5 @@ public class Categoria {
     public void setProductos(List<Producto> productos) {
         this.productos = productos;
     }
-=======
->>>>>>> ce010ff858cd2c38f8e28b1af4dfae667930191a
+
 }
