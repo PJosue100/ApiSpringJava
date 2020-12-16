@@ -1,5 +1,6 @@
 package com.desarrollo.josue.platzimarket.persistence;
 
+<<<<<<< HEAD
 import com.desarrollo.josue.platzimarket.domain.Product;
 import com.desarrollo.josue.platzimarket.domain.repository.ProductRepository;
 import com.desarrollo.josue.platzimarket.persistence.crud.ProductoCrudRepository;
@@ -7,10 +8,15 @@ import com.desarrollo.josue.platzimarket.persistence.entity.Producto;
 import com.desarrollo.josue.platzimarket.persistence.mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+=======
+import com.desarrollo.josue.platzimarket.persistence.crud.ProductoCrudRepository;
+import com.desarrollo.josue.platzimarket.persistence.entity.Producto;
+>>>>>>> ce010ff858cd2c38f8e28b1af4dfae667930191a
 
 import java.util.List;
 import java.util.Optional;
 
+<<<<<<< HEAD
 //@Component Es una manera general de indicar a sqpring que la clase se trata de un componente
 //pero es mejor colocal @Repository ya que es mas especificao con el contenido de la clase
 //Con esta anotacion le indicamos a spring que esta clase va interactuar con nuestra base de datos
@@ -68,4 +74,22 @@ public class ProductoRepository implements ProductRepository {
 
 
 
+=======
+public class ProductoRepository {
+
+    private ProductoCrudRepository productoCrudRepository;
+
+    public List<Producto> getAll(){
+        return (List<Producto>) productoCrudRepository.findAll();
+    }
+
+    public List<Producto>getByCategoria(int idCategoria){
+        return productoCrudRepository.findByIdCategoriaOrderByNombreAsc(idCategoria);
+    }
+
+    public Optional<List<Producto>> getEscasos(int cantidad){
+        return productoCrudRepository.findByCantidadStockLessThanAndEstado(cantidad,true);
+    }
+
+>>>>>>> ce010ff858cd2c38f8e28b1af4dfae667930191a
 }
