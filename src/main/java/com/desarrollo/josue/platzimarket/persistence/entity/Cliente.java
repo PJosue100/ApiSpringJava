@@ -14,7 +14,7 @@ public class Cliente {
     private Long celular;
     private String direccion;
     @Column(name = "correo_electronico")
-    private Integer correoElectronico;
+    private String correoElectronico;
 
     @OneToMany(mappedBy = "cliente")
     private List<Compra> compras;
@@ -60,11 +60,11 @@ public class Cliente {
         this.direccion = direccion;
     }
 
-    public Integer getCorreoElectronico() {
+    public String getCorreoElectronico() {
         return correoElectronico;
     }
 
-    public void setCorreoElectronico(Integer correoElectronico) {
+    public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
     }
 }
